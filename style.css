@@ -1287,3 +1287,15 @@ img {
         padding: 0 1.25rem;
     }
 }
+
+/* MOBILE BURGER MENU FIX */
+@media (max-width: 768px) {
+    .nav-actions {
+        position: relative;
+        z-index: 1001;
+    }
+    .nav-menu {
+        transition: right 0.3s ease-in-out !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    }
+}
