@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    CSS CUSTOM PROPERTIES (THEME VARIABLES)
    ============================================ */
 [data-theme="dark"] {
@@ -101,12 +101,24 @@ img {
     background: transparent;
 }
 
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
 .navbar.scrolled {
+    padding: 0.75rem 0;
+    box-shadow: 0 1px 0 var(--border-subtle), var(--shadow);
+}
+
+.navbar.scrolled::before {
     background: var(--navbar-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 0.75rem 0;
-    box-shadow: 0 1px 0 var(--border-subtle), var(--shadow);
 }
 
 .nav-container {
@@ -140,6 +152,7 @@ img {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -1295,7 +1308,11 @@ img {
         z-index: 1001;
     }
     .nav-menu {
-        transition: right 0.3s ease-in-out !important;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s !important;
+        visibility: hidden;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    }
+    .nav-menu.open {
+        visibility: visible;
     }
 }
