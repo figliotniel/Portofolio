@@ -1342,3 +1342,10 @@ img {
         padding: 0 2.5rem !important;
     }
 }
+/* ABOUT BUTTONS */
+.about-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
