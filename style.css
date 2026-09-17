@@ -1319,13 +1319,7 @@ img {
 
 /* DESKTOP FLOATING NAVBAR OVERRIDES */
 @media (min-width: 769px) {
-    .navbar {
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .navbar::before {
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .navbar.scrolled {
+    .navbar, .navbar.scrolled {
         top: 1.5rem !important;
         width: 85% !important;
         max-width: 1000px !important;
@@ -1336,11 +1330,15 @@ img {
         padding: 0.5rem 0 !important;
         border: 1px solid var(--border) !important;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 3px 10px rgba(0, 0, 0, 0.1) !important;
+        background: transparent !important;
     }
-    .navbar.scrolled::before {
+    .navbar::before, .navbar.scrolled::before {
         border-radius: 9999px !important;
+        background: var(--navbar-bg) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
     }
-    .navbar.scrolled .nav-container {
+    .navbar .nav-container, .navbar.scrolled .nav-container {
         padding: 0 2.5rem !important;
     }
 }
