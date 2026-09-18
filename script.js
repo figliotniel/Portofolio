@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    PORTFOLIO SCRIPT - Figlio Otniel Suliktyono
    ============================================ */
 
@@ -289,7 +289,7 @@ document.querySelectorAll('.exp-carousel').forEach(carousel => {
 
     function goTo(i) {
         index = i;
-        track.style.transform = 	ranslateX(- + (index * 100) + %);
+        track.style.transform = 'translateX(-' + (index * 100) + '%)';
         dots.forEach(d => d.classList.remove('active'));
         dots[index].classList.add('active');
         resetInterval();
