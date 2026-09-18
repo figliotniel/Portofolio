@@ -1,10 +1,7 @@
-﻿/* ============================================
+/* ============================================
    PORTFOLIO SCRIPT - Figlio Otniel Suliktyono
    ============================================ */
 
-// ============================================
-// 1. THEME TOGGLE
-// ============================================
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon   = document.getElementById('themeIcon');
 const htmlEl      = document.documentElement;
@@ -18,8 +15,6 @@ function applyTheme(theme) {
         themeIcon.className = 'fas fa-moon';
     }
 }
-
-// Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
 applyTheme(savedTheme);
 
@@ -28,11 +23,7 @@ themeToggle.addEventListener('click', () => {
     applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
 });
 
-// ============================================
-// 2. NAVBAR SCROLL STATE
-// ============================================
 const navbar = document.getElementById('navbar');
-
 function handleNavbarScroll() {
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -40,30 +31,20 @@ function handleNavbarScroll() {
         navbar.classList.remove('scrolled');
     }
 }
-
 window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-handleNavbarScroll(); // run once on load
+handleNavbarScroll();
 
-// ============================================
-// 3. SCROLL PROGRESS BAR
-// ============================================
 const scrollProgress = document.getElementById('scrollProgress');
-
 function updateScrollProgress() {
     const scrollTop    = window.scrollY;
     const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
     const scrolledPct  = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     scrollProgress.style.width = scrolledPct + '%';
 }
-
 window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
-// ============================================
-// 4. ACTIVE NAV LINK (INTERSECTION OBSERVER)
-// ============================================
 const sections  = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-link');
-
 const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -76,21 +57,15 @@ const sectionObserver = new IntersectionObserver((entries) => {
         }
     });
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
 sections.forEach(section => sectionObserver.observe(section));
 
-// ============================================
-// 5. HAMBURGER MENU
-// ============================================
 const hamburger = document.getElementById('hamburger');
 const navMenu   = document.getElementById('navMenu');
-
 function closeMenu() {
     hamburger.classList.remove('active');
     navMenu.classList.remove('open');
     document.body.style.overflow = '';
 }
-
 hamburger.addEventListener('click', () => {
     const isOpen = navMenu.classList.contains('open');
     if (isOpen) {
@@ -101,31 +76,19 @@ hamburger.addEventListener('click', () => {
         document.body.style.overflow = 'hidden';
     }
 });
-
-// Close menu when a nav link is clicked
 navMenu.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', closeMenu);
 });
-
-// Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('open') &&
-        !navMenu.contains(e.target) &&
-        !hamburger.contains(e.target)) {
+    if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
         closeMenu();
     }
 });
 
-// ============================================
-// 6. TYPING ANIMATION
-// ============================================
-const typingEl   = document.getElementById('typingText');
-const typingRoles = [
-    'Web Developer',
-    'Laravel Developer',
-    'Sistem Informasi Student',
-    'Problem Solver'
-];
+// 6. TYPING ANIMATION (BILINGUAL)
+const typingEl = document.getElementById('typingText');
+const rolesId = ['Web Developer', 'Laravel Developer', 'Mahasiswa Sistem Informasi', 'Problem Solver'];
+const rolesEn = ['Web Developer', 'Laravel Developer', 'Information System Student', 'Problem Solver'];
 
 let roleIndex = 0;
 let charIndex = 0;
@@ -133,6 +96,9 @@ let isDeleting = false;
 let typingTimeout;
 
 function typeWriter() {
+    const isId = document.documentElement.getAttribute('data-lang') === 'id';
+    const typingRoles = isId ? rolesId : rolesEn;
+    roleIndex = roleIndex % typingRoles.length;
     const currentRole = typingRoles[roleIndex];
 
     if (isDeleting) {
@@ -146,7 +112,7 @@ function typeWriter() {
     let delay = isDeleting ? 60 : 100;
 
     if (!isDeleting && charIndex === currentRole.length) {
-        delay = 1800; // pause at end
+        delay = 1800; 
         isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
@@ -156,89 +122,21 @@ function typeWriter() {
 
     typingTimeout = setTimeout(typeWriter, delay);
 }
-
-// Start typing after hero animation completes
 setTimeout(typeWriter, 800);
 
-// ============================================
 // 7. SCROLL REVEAL (.reveal -> .visible)
-// ============================================
 const revealEls = document.querySelectorAll('.reveal');
-
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target); // once
+            revealObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.12 });
-
 revealEls.forEach(el => revealObserver.observe(el));
 
-// ============================================
-// 8. SKILL BAR ANIMATION
-// ============================================
-const skillFills = document.querySelectorAll('.skill-fill');
-
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const fill      = entry.target;
-            const targetPct = fill.getAttribute('data-width');
-            // Small timeout for visual stagger
-            setTimeout(() => {
-                fill.style.width = targetPct + '%';
-            }, 200);
-            skillObserver.unobserve(fill);
-        }
-    });
-}, { threshold: 0.4 });
-
-skillFills.forEach(fill => skillObserver.observe(fill));
-
-// ============================================
-// 9. COUNTER ANIMATION (STATS)
-// ============================================
-const statNumbers = document.querySelectorAll('.stat-number');
-
-function animateCounter(el, target, duration) {
-    const start     = 0;
-    const startTime = performance.now();
-
-    function updateCounter(currentTime) {
-        const elapsed  = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // Ease-out cubic
-        const eased    = 1 - Math.pow(1 - progress, 3);
-        const current  = Math.floor(start + (target - start) * eased);
-        el.textContent = current;
-        if (progress < 1) {
-            requestAnimationFrame(updateCounter);
-        } else {
-            el.textContent = target;
-        }
-    }
-
-    requestAnimationFrame(updateCounter);
-}
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el     = entry.target;
-            const target = parseInt(el.getAttribute('data-target'), 10);
-            animateCounter(el, target, 1500);
-            counterObserver.unobserve(el);
-        }
-    });
-}, { threshold: 0.5 });
-
-statNumbers.forEach(num => counterObserver.observe(num));
-
-// ============================================
-// SMOOTH ANCHOR SCROLLING (OFFSET FOR NAVBAR)
-// ============================================
+// SMOOTH SCROLLING
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
         const targetId = anchor.getAttribute('href');
@@ -252,9 +150,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ============================================
-// 9. LANGUAGE TOGGLE
-// ============================================
+// 9. LANGUAGE TOGGLE (Triggers typing refresh)
 const langToggle = document.getElementById('langToggle');
 if(langToggle) {
     langToggle.addEventListener('click', () => {
@@ -262,12 +158,15 @@ if(langToggle) {
         const isId = html.getAttribute('data-lang') === 'id';
         html.setAttribute('data-lang', isId ? 'en' : 'id');
         langToggle.textContent = isId ? 'ID' : 'EN';
+        
+        // Force delete immediately to switch to new language text
+        if(!isDeleting) {
+            isDeleting = true;
+        }
     });
 }
 
-// ============================================
 // 10. CAROUSEL LOGIC
-// ============================================
 document.querySelectorAll('.exp-carousel').forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const imgs = carousel.querySelectorAll('.carousel-img');
@@ -277,7 +176,6 @@ document.querySelectorAll('.exp-carousel').forEach(carousel => {
     let index = 0;
     let interval;
 
-    // Create dots
     imgs.forEach((_, i) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -299,7 +197,6 @@ document.querySelectorAll('.exp-carousel').forEach(carousel => {
         index = (index + 1) % imgs.length;
         goTo(index);
     }
-
     function prevSlide() {
         index = (index - 1 + imgs.length) % imgs.length;
         goTo(index);
@@ -310,7 +207,7 @@ document.querySelectorAll('.exp-carousel').forEach(carousel => {
 
     function resetInterval() {
         clearInterval(interval);
-        interval = setInterval(nextSlide, 3000); // 3 seconds auto-slide
+        interval = setInterval(nextSlide, 3000); 
     }
     resetInterval();
 });
