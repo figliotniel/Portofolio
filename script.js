@@ -251,3 +251,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         window.scrollTo({ top, behavior: 'smooth' });
     });
 });
+
+// ============================================
+// 9. LANGUAGE TOGGLE
+// ============================================
+const langToggle = document.getElementById('langToggle');
+if(langToggle) {
+    langToggle.addEventListener('click', () => {
+        const html = document.documentElement;
+        const isId = html.getAttribute('data-lang') === 'id';
+        html.setAttribute('data-lang', isId ? 'en' : 'id');
+        langToggle.textContent = isId ? 'ID' : 'EN';
+    });
+}
+
+// ============================================
+// 10. CAROUSEL LOGIC
+// ============================================
+document.querySelectorAll('.exp-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const imgs = carousel.querySelectorAll('.carousel-img');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    let index = 0;
+    let interval;
+
+    // Create dots
+    imgs.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if(i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    });
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function goTo(i) {
+        index = i;
+        track.style.transform = 	ranslateX(- + (index * 100) + %);
+        dots.forEach(d => d.classList.remove('active'));
+        dots[index].classList.add('active');
+        resetInterval();
+    }
+
+    function nextSlide() {
+        index = (index + 1) % imgs.length;
+        goTo(index);
+    }
+
+    function prevSlide() {
+        index = (index - 1 + imgs.length) % imgs.length;
+        goTo(index);
+    }
+
+    next.addEventListener('click', nextSlide);
+    prev.addEventListener('click', prevSlide);
+
+    function resetInterval() {
+        clearInterval(interval);
+        interval = setInterval(nextSlide, 3000); // 3 seconds auto-slide
+    }
+    resetInterval();
+});
