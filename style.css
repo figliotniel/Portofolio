@@ -1860,3 +1860,41 @@ html[data-theme="dark"] .brand-github { background: #f0f6fc; color: #24292e; }
 .exp-project-card:hover {
     transform: translateY(-5px);
 }
+
+/* =========================================
+   RELATED PROJECT CARD (OPTION B)
+   ========================================= */
+.related-project-card {
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.related-project-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+.related-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.related-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+.related-project-card .btn-sm {
+    margin-top: 0.5rem;
+    display: inline-flex;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+}
