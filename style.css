@@ -1727,3 +1727,69 @@ html[data-theme="dark"] .brand-github { background: #f0f6fc; color: #24292e; }
 
 .contact-info h3 { margin: 0 0 0.25rem 0; font-size: 1rem; }
 .contact-info p { margin: 0; font-size: 0.875rem; color: var(--text-secondary); }
+
+/* =========================================
+   SPLIT LAYOUT EXPERIENCE
+   ========================================= */
+.exp-split-card {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.exp-split-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+.exp-content-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.exp-visual-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+.exp-static-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+.exp-content-side h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.exp-content-side .exp-role {
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+.exp-content-side .exp-date {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+    .exp-split-card {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+    }
+}
+@media (max-width: 576px) {
+    .exp-split-card {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+}
