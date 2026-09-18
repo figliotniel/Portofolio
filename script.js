@@ -87,7 +87,7 @@ document.addEventListener('click', (e) => {
 
 // 6. TYPING ANIMATION (BILINGUAL)
 const typingEl = document.getElementById('typingText');
-const rolesId = ['Web Developer', 'Laravel Developer', 'Mahasiswa Sistem Informasi', 'Problem Solver'];
+const rolesId = ['Web Developer', 'Laravel Developer', 'Mhs. Sistem Informasi', 'Problem Solver'];
 const rolesEn = ['Web Developer', 'Laravel Developer', 'Information System Student', 'Problem Solver'];
 
 let roleIndex = 0;
