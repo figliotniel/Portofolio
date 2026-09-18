@@ -1793,3 +1793,70 @@ html[data-theme="dark"] .brand-github { background: #f0f6fc; color: #24292e; }
         gap: 1.5rem;
     }
 }
+
+/* =========================================
+   RELATED PROJECT CARD (REDESIGN)
+   ========================================= */
+.related-project-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.related-project-card:hover {
+    border-color: var(--accent);
+}
+.project-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    background: rgba(99, 102, 241, 0.1);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+}
+.project-title-large {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+.related-project-card p {
+    line-height: 1.6;
+}
+.btn-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.btn-github:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+/* Ensure the normal Client Projects cards still look good */
+.exp-project-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+.exp-project-card:hover {
+    transform: translateY(-5px);
+}
