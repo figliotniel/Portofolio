@@ -159,7 +159,17 @@ if(langToggle) {
         html.setAttribute('data-lang', isId ? 'en' : 'id');
         langToggle.textContent = isId ? 'ID' : 'EN';
         
-        // Force delete immediately to switch to new language text
+        // Ensure accordion toggles text switch correctly if expanded
+        document.querySelectorAll('.timeline-header').forEach(header => {
+            const content = header.nextElementSibling;
+            if (content && content.classList.contains('expanded')) {
+                const toggleTextEn = header.querySelector('.accordion-toggle .lang-en');
+                const toggleTextId = header.querySelector('.accordion-toggle .lang-id');
+                if(toggleTextEn) toggleTextEn.textContent = 'Hide Details ▲';
+                if(toggleTextId) toggleTextId.textContent = 'Tutup Detail ▲';
+            }
+        });
+
         if(!isDeleting) {
             isDeleting = true;
         }
@@ -210,4 +220,23 @@ document.querySelectorAll('.exp-carousel').forEach(carousel => {
         interval = setInterval(nextSlide, 3000); 
     }
     resetInterval();
+});
+
+// 11. ACCORDION LOGIC
+document.querySelectorAll('.timeline-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const toggleTextEn = header.querySelector('.accordion-toggle .lang-en');
+        const toggleTextId = header.querySelector('.accordion-toggle .lang-id');
+        
+        if (content.classList.contains('expanded')) {
+            content.classList.remove('expanded');
+            if(toggleTextEn) toggleTextEn.textContent = 'View Details ▼';
+            if(toggleTextId) toggleTextId.textContent = 'Lihat Detail ▼';
+        } else {
+            content.classList.add('expanded');
+            if(toggleTextEn) toggleTextEn.textContent = 'Hide Details ▲';
+            if(toggleTextId) toggleTextId.textContent = 'Tutup Detail ▲';
+        }
+    });
 });
