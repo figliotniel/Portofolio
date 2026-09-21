@@ -3,315 +3,728 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Figlio Otniel Suliktyono - Portfolio">
-    <title>Figlio Otniel | Portfolio</title>
+    <meta name="description" content="Figlio Otniel Suliktyono - Web Developer & Information Systems Student specializing in system architecture, Laravel, and responsive web applications.">
+    <meta name="author" content="Figlio Otniel Suliktyono">
+    <meta name="theme-color" content="#070a12">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Figlio Otniel | Creative Tech & Systems Developer">
+    <meta property="og:description" content="Portofolio Figlio Otniel Suliktyono - Web Developer &amp; Mahasiswa Sistem Informasi Universitas Dian Nuswantoro. Arsitektur sistem, basis data terstruktur, dan rekayasa web modern.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/203051088?v=4">
+    <meta property="og:url" content="https://github.com/figliotniel">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Figlio Otniel | Creative Tech Portfolio">
+    <meta name="twitter:description" content="Portfolio of Figlio Otniel Suliktyono - Web Developer & Information Systems Student.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/203051088?v=4">
+
+    <title>Figlio Otniel | Creative Tech Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Ctext x='50%25' y='54%25' font-family='monospace' font-weight='bold' font-size='15' fill='%2310b981' text-anchor='middle' dominant-baseline='middle'%3E%26lt;F/%26gt;%3C/text%3E%3C/svg%3E">
+    
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
+    <!-- FLOATING NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo"><span class="logo-bracket">&lt;</span>Fig<span class="logo-bracket">/&gt;</span></a>
+            <a href="#home" class="nav-logo" aria-label="Figlio Otniel Portfolio Homepage">
+                <span class="logo-bracket">&lt;</span>Fig<span class="logo-bracket">/&gt;</span>
+            </a>
+            
             <div class="nav-menu" id="navMenu">
                 <a href="#home" class="nav-link active"><span class="lang-id">Beranda</span><span class="lang-en">Home</span></a>
-                <a href="#about" class="nav-link"><span class="lang-id">Tentang</span><span class="lang-en">About</span></a>
                 <a href="#experience" class="nav-link"><span class="lang-id">Pengalaman</span><span class="lang-en">Experience</span></a>
-                <a href="#skills" class="nav-link"><span class="lang-id">Keahlian</span><span class="lang-en">Skills</span></a>
-                <a href="#contact" class="nav-link"><span class="lang-id">Kontak</span><span class="lang-en">Contact</span></a>
+                <a href="#skills" class="nav-link"><span class="lang-id">Keahlian</span><span class="lang-en">Tech Stack</span></a>
+                <a href="#contact" class="nav-link"><span class="lang-id">Kontak</span><span class="lang-en">Connect</span></a>
             </div>
+
             <div class="nav-actions">
-                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">EN</button>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun" id="themeIcon"></i>
+                <button class="nav-copy-email font-mono" id="navCopyEmail" aria-label="Salin email ke clipboard">
+                    <i class="fas fa-copy" aria-hidden="true"></i>
+                    <span>Copy Email</span>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <button class="lang-toggle" id="langToggle" aria-label="Switch language to English">EN</button>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+                    <i class="fas fa-sun" id="themeIcon" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Buka menu navigasi" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-blob blob-1"></div>
-            <div class="hero-blob blob-2"></div>
-            <div class="hero-blob blob-3"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <p class="hero-greeting animate-fade-up"><span class="lang-id">Halo, saya 👋</span><span class="lang-en">Hello, I'm 👋</span></p>
-                <h1 class="hero-name animate-fade-up delay-1">Figlio Otniel<br><span class="accent-text">Suliktyono</span></h1>
-                <div class="hero-typing animate-fade-up delay-2">
-                    <span class="typing-prefix"><span class="lang-id">Saya seorang&nbsp;</span><span class="lang-en">I am a&nbsp;</span></span>
-                    <span class="typing-text" id="typingText"></span>
-                    <span class="typing-cursor">|</span>
-                </div>
-                <p class="hero-bio animate-fade-up delay-3">
-                    <span class="lang-id">Berfokus pada perancangan sistem dan pengembangan aplikasi web fungsional. Memiliki pengalaman menangani berbagai proyek web, sekaligus memiliki rasa ingin tahu yang tinggi untuk terus mengeksplorasi stack dan solusi teknologi baru.</span>
-                    <span class="lang-en">Focused on system design and developing functional web applications. Experienced in handling various web projects, with a strong curiosity to continuously explore new tech stacks and digital solutions.</span>
-                </p>
-                <div class="hero-buttons animate-fade-up delay-4">
-                    <a href="#experience" class="btn btn-primary"><i class="fas fa-folder-open"></i> <span class="lang-id">Lihat Pengalaman</span><span class="lang-en">View Experience</span></a>
-                    <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> <span class="lang-id">Hubungi Saya</span><span class="lang-en">Contact Me</span></a>
-                </div>
-            </div>
-            <div class="hero-image animate-fade-left delay-2">
-                <div class="image-wrapper">
-                    <div class="image-ring"></div>
-                    <img src="https://avatars.githubusercontent.com/u/203051088?v=4" alt="Figlio Otniel" class="profile-img">
-                    <div class="image-badge"><i class="fas fa-code"></i></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <p class="section-label"><span class="lang-id">Tentang Saya</span><span class="lang-en">About Me</span></p>
-                <h2 class="section-title"><span class="lang-id">Siapa <span class="accent-text">Saya?</span></span><span class="lang-en">Who am <span class="accent-text">I?</span></span></h2>
-            </div>
-            <div class="about-grid about-layout">
-                <div class="about-content reveal">
-                    <p class="about-text lang-id">Halo! Saya <strong>Figlio Otniel Suliktyono</strong>, mahasiswa Sistem Informasi semester 7 di <strong>Universitas Dian Nuswantoro</strong>. Saya memiliki ketertarikan mendalam pada pengembangan web (web development) dan analisis arsitektur sistem.</p>
-                    <p class="about-text lang-en">Hello! I am <strong>Figlio Otniel Suliktyono</strong>, a 7th-semester Information Systems student at <strong>Dian Nuswantoro University</strong>. I have a deep interest in web development and system architecture analysis.</p>
-                    
-                    <p class="about-text lang-id">Selama masa perkuliahan dan berbagai proyek mandiri, saya terbiasa membangun aplikasi web dari tahap menganalisis kebutuhan pengguna, merancang struktur basis data MySQL, hingga mengeksekusinya menjadi antarmuka yang responsif. Stack utama yang sering saya gunakan meliputi Laravel, React, dan Tailwind CSS.</p>
-                    <p class="about-text lang-en">Throughout my studies and independent projects, I am accustomed to building web applications from analyzing user requirements and designing MySQL databases, to executing them into responsive interfaces. My primary stack includes Laravel, React, and Tailwind CSS.</p>
-                    
-                    <p class="about-text lang-id">Bagi saya, setiap proyek adalah kesempatan untuk menyelesaikan masalah secara efisien. Saya selalu bersemangat untuk mempelajari teknologi baru, beradaptasi dengan workflow industri, dan berkolaborasi dalam membangun solusi digital yang memberikan dampak nyata.</p>
-                    <p class="about-text lang-en">For me, every project is an opportunity to solve problems efficiently. I am always eager to learn new technologies, adapt to industry workflows, and collaborate in building digital solutions that deliver real impact.</p>
-                    
-                    <div class="about-info">
-                        <div class="info-item"><i class="fas fa-university accent-text"></i><div><span class="info-label"><span class="lang-id">Universitas</span><span class="lang-en">University</span></span><span class="info-value">Universitas Dian Nuswantoro</span></div></div>
-                        <div class="info-item"><i class="fas fa-book accent-text"></i><div><span class="info-label"><span class="lang-id">Jurusan</span><span class="lang-en">Major</span></span><span class="info-value">Sistem Informasi</span></div></div>
-                        <div class="info-item"><i class="fas fa-calendar-alt accent-text"></i><div><span class="info-label"><span class="lang-id">Semester</span><span class="lang-en">Semester</span></span><span class="info-value"><span class="lang-id">7 (Aktif)</span><span class="lang-en">7th (Active)</span></span></div></div>
-                        <div class="info-item"><i class="fas fa-map-marker-alt accent-text"></i><div><span class="info-label"><span class="lang-id">Lokasi</span><span class="lang-en">Location</span></span><span class="info-value">Semarang, Indonesia</span></div></div>
-                    </div>
-                </div>
-                <div class="cv-card reveal delay-2">
-                    <h4><span class="lang-id">Resume / CV</span><span class="lang-en">Resume / CV</span></h4>
-                    <p><span class="lang-id">Figlio Otniel Suliktyono</span><span class="lang-en">Figlio Otniel Suliktyono</span><br><span class="lang-id">Diperbarui: 2026</span><span class="lang-en">Updated: 2026</span></p>
-                    <div class="cv-buttons">
-                        <a href="cv.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-eye"></i> <span class="lang-id">Lihat CV</span><span class="lang-en">View CV</span></a>
-                        <a href="cv.pdf" download="CV_Figlio_Otniel.pdf" class="btn btn-outline"><i class="fas fa-download"></i> <span class="lang-id">Unduh PDF</span><span class="lang-en">Download PDF</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt" id="experience">
-        <div class="container">
-            <div class="section-header reveal">
-                <p class="section-label"><span class="lang-id">Riwayat</span><span class="lang-en">Track Record</span></p>
-                <h2 class="section-title"><span class="lang-id">Pengalaman & <span class="accent-text">Proyek</span></span><span class="lang-en">Experience & <span class="accent-text">Projects</span></span></h2>
+    <main id="main-content">
+        <!-- 1. HERO: DEVELOPER COMMAND CENTER -->
+        <section class="hero" id="home">
+            <div class="hero-bg">
+                <div class="hero-grid-pattern"></div>
+                <div class="hero-blob blob-1"></div>
+                <div class="hero-blob blob-2"></div>
+                <div class="hero-blob blob-3"></div>
             </div>
             
-            <!-- Experience 1: Telkom (Split Layout) -->
-            <div class="exp-split-card reveal">
-                <div class="exp-content-side">
-                    <h3>PT Telkom Indonesia</h3>
-                    <p class="exp-role"><span class="lang-id">Magang Shared Service & General Support</span><span class="lang-en">Shared Service & General Support Intern</span></p>
-                    <p class="exp-date">Feb 2026 - May 2026 · Semarang Jateng Utara</p>
-                    
-                    <div class="exp-desc mt-4">
-                        <p class="lang-id">Mengumpulkan kebutuhan bisnis dan membangun sistem manajemen magang berbasis web. Memetakan proses bisnis utama menggunakan diagram UML dan BPMN, serta mengelola dokumentasi sistem dan dukungan operasional audit SMK3.</p>
-                        <p class="lang-en">Gathered business requirements and built a web-based internship management system. Mapped core business processes and system workflows using UML and BPMN diagrams, and managed system documentation for SMK3 audit preparation.</p>
-                    </div>
-                    
-                    <!-- NEW RELATED PROJECT CARD OPTION B -->
-                    <div class="related-project-card mt-4">
-                        <div class="related-label"><i class="fas fa-link"></i> <span class="lang-id">PROYEK TERKAIT</span><span class="lang-en">RELATED PROJECT</span></div>
-                        <h4 class="related-title">Telkom Internship Dashboard</h4>
-                        <div class="project-tags mt-2 mb-3"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">UML</span><span class="tag">BPMN</span></div>
-                        <p class="text-sm text-secondary mb-4"><span class="lang-id">Sistem web internal/dashboard untuk manajemen magang.</span><span class="lang-en">Internal web system/dashboard for internship management.</span></p>
-                        <a href="https://github.com/figliotniel/telkom-internship" target="_blank" class="btn-outline btn-sm"><i class="fab fa-github"></i> GitHub Repo</a>
-                    </div>
-                </div>
-                
-                <div class="exp-visual-side">
-                    <img src="img_telkom.jpg" alt="Telkom Internship" class="exp-static-img">
-                </div>
-            </div>
-
-            <!-- Experience 2: UGM (Split Layout) -->
-            <div class="exp-split-card reveal delay-1">
-                <div class="exp-content-side">
-                    <h3>Universitas Gadjah Mada</h3>
-                    <p class="exp-role"><span class="lang-id">Program Pertukaran Pelajar - Ilmu Komputer</span><span class="lang-en">Student Exchange Program - Computer Science</span></p>
-                    <p class="exp-date">Aug 2025 - Dec 2025 · Yogyakarta</p>
-                    
-                    <div class="exp-desc mt-4">
-                        <p class="lang-id">Mengambil mata kuliah relevan seperti Software Engineering Project, Deep Learning, AI, Blockchain Technology, IoT, dan Software Quality Assurance (SQA).</p>
-                        <p class="lang-en">Completed relevant coursework including Software Engineering Project, Deep Learning, Artificial Intelligence, Blockchain Technology, IoT, and Software Quality Assurance (SQA).</p>
-                    </div>
-                    
-                    <!-- NEW RELATED PROJECT CARD OPTION B -->
-                    <div class="related-project-card mt-4">
-                        <div class="related-label"><i class="fas fa-link"></i> <span class="lang-id">PROYEK TERKAIT</span><span class="lang-en">RELATED PROJECT</span></div>
-                        <h4 class="related-title">SITANAS</h4>
-                        <div class="project-tags mt-2 mb-3"><span class="tag">Laravel</span><span class="tag">MySQL</span><span class="tag">Blade</span><span class="tag">RPPL</span></div>
-                        <p class="text-sm text-secondary mb-4"><span class="lang-id">Sistem Informasi Tanah Aset Desa — Aplikasi web untuk digitalisasi manajemen Tanah Kas Desa (Proyek Rekayasa Perangkat Lunak). Memfasilitasi pencatatan inventaris (NUP, Kode Barang), legalitas sertifikat, dan validasi berjenjang.</span><span class="lang-en">Village Asset Land Information System — Web app for digitizing Village Treasury Land management (Software Engineering Project). Facilitates inventory tracking, certificate legality, and multi-level validation.</span></p>
-                        <a href="https://github.com/figliotniel/SITANAS" target="_blank" class="btn-outline btn-sm"><i class="fab fa-github"></i> GitHub Repo</a>
-                    </div>
-                </div>
-                
-                <div class="exp-visual-side">
-                    <!-- Carousel for UGM -->
-                    <div class="exp-carousel" id="carousel-ugm">
-                        <div class="carousel-track">
-                            <img src="img_ugm1.jpg" alt="UGM 1" class="carousel-img">
-                            <img src="img_ugm2.jpg" alt="UGM 2" class="carousel-img">
-                            <img src="img_ugm3.jpg" alt="UGM 3" class="carousel-img">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <!-- Live Telemetry Status Bar -->
+                    <div class="telemetry-strip animate-fade-up">
+                        <div class="telemetry-item">
+                            <span class="telemetry-dot"></span>
+                            <span class="lang-id">SYS.READY / TERSEDIA</span>
+                            <span class="lang-en">SYS.READY / AVAILABLE</span>
                         </div>
-                        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-dots"></div>
+                        <div class="telemetry-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span>Semarang, ID (GMT+7)</span>
+                        </div>
+                        <div class="telemetry-item">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            <span>UDINUS × UGM</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-headline-sub animate-fade-up delay-1">
+                        <span class="lang-id">Arsitektur Sistem & Rekayasa Web</span>
+                        <span class="lang-en">Systems Architecture & Web Engineering</span>
+                    </p>
+                    
+                    <h1 class="hero-name animate-fade-up delay-2">
+                        Figlio Otniel<br><span class="accent-text">Suliktyono</span>
+                    </h1>
+                    
+                    <!-- Terminal Prompt Interactive Box -->
+                    <div class="terminal-prompt-box animate-fade-up delay-2">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="t-dot t-red"></span>
+                                <span class="t-dot t-yellow"></span>
+                                <span class="t-dot t-green"></span>
+                            </div>
+                            <span class="terminal-title font-mono">figlio@dev-terminal:~</span>
+                        </div>
+                        <div class="terminal-body font-mono">
+                            <span class="t-prompt">&gt;</span>
+                            <span class="typing-text" id="typingText"></span>
+                            <span class="typing-cursor">_</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-bio animate-fade-up delay-3">
+                        <span class="lang-id">Mahasiswa Sistem Informasi Universitas Dian Nuswantoro (Semester 7) dengan pola pikir adaptif dan komitmen kuat untuk terus berkembang. Berfokus pada perancangan arsitektur sistem, basis data terstruktur, serta rekayasa aplikasi web yang siap skala. Cepat mempelajari teknologi baru dan antusias menghadapi berbagai tantangan rekayasa digital.</span>
+                        <span class="lang-en">Information Systems student at Dian Nuswantoro University (7th Sem) with an adaptive mindset and a passion for continuous learning. Focused on system architecture design, structured databases, and scalable web engineering. Quick to master emerging technologies and eager to tackle complex digital challenges.</span>
+                    </p>
+
+                    <div class="hero-buttons animate-fade-up delay-4">
+                        <a href="#experience" class="btn btn-primary">
+                            <i class="fas fa-layer-group" aria-hidden="true"></i>
+                            <span class="lang-id">Jelajahi Pengalaman</span>
+                            <span class="lang-en">Explore Experience</span>
+                        </a>
+                        <a href="CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Lihat Resume CV Figlio Otniel">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            <span class="lang-id">Lihat Resume CV</span>
+                            <span class="lang-en">View Resume CV</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: High-Tech Creative Borderless Portrait with Floating Tech Badges -->
+                <div class="hero-image animate-fade-left delay-2">
+                    <div class="hero-portrait-stage" id="heroPortrait">
+                        <!-- Ambient Cyber Halo Glow -->
+                        <div class="portrait-glow-halo" aria-hidden="true"></div>
+
+                        <!-- Floating Badges Around Portrait (Carefully Positioned Away From Face) -->
+                        <div class="floating-chip chip-udinus font-mono" aria-label="Universitas Dian Nuswantoro">
+                            <img src="logo_udinus.png" alt="Logo UDINUS" width="22" height="22" loading="lazy">
+                            <span>UDINUS</span>
+                        </div>
+
+                        <div class="floating-chip chip-laravel font-mono" aria-label="Laravel Framework">
+                            <i class="fab fa-laravel" style="color: #f43f5e;" aria-hidden="true"></i>
+                            <span>Laravel</span>
+                        </div>
+
+                        <div class="floating-chip chip-ugm font-mono" aria-label="Universitas Gadjah Mada">
+                            <img src="logo_ugm.png" alt="Logo UGM" width="22" height="22" loading="lazy">
+                            <span>UGM CS</span>
+                        </div>
+
+                        <div class="floating-chip chip-react font-mono" aria-label="React.js">
+                            <i class="fab fa-react" style="color: #06b6d4;" aria-hidden="true"></i>
+                            <span>React</span>
+                        </div>
+
+                        <!-- The Borderless Portrait Image with Edge-Blur Fading -->
+                        <div class="portrait-img-wrapper">
+                            <img src="img_figlio_portrait.jpg" alt="Figlio Otniel Suliktyono - Web Developer &amp; Systems Architecture" class="hero-portrait-img" width="420" height="520" fetchpriority="high">
+                            <div class="portrait-fade-overlay" aria-hidden="true"></div>
+                        </div>
+
+                        <!-- Central Verified Floating Status Badge at Bottom -->
+                        <div class="portrait-floating-badge font-mono">
+                            <span class="badge-status-dot"></span>
+                            <span class="badge-status-text">FIGLIO OTNIEL // ACTIVE 2026</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Client Projects -->
-            <div class="mt-16">
-                <h3 class="text-2xl font-bold mb-6 text-center"><i class="fas fa-briefcase accent-text"></i> <span class="lang-id">Proyek Klien (Freelance)</span><span class="lang-en">Client Projects (Freelance)</span></h3>
-                <div class="client-projects">
-                    
-                    <!-- Kopi Tuman -->
-                    <div class="exp-project-card reveal">
-                        <div class="project-preview">
-                            <img src="img_kopituman.jpg" alt="Kopi Tuman Preview" class="preview-img">
-                            <div class="preview-overlay">
-                                <a href="https://kopi-tuman.vercel.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <!-- 2. INSTITUTIONAL CREDENTIALS STRIP -->
+        <section class="credentials-section" id="credentials">
+            <div class="credentials-container">
+                <div class="credentials-header reveal">
+                    <p class="font-mono"><span class="lang-id">// REKAM JEJAK &amp; INSTITUSI UTAMA</span><span class="lang-en">// TRACK RECORD &amp; INSTITUTIONS</span></p>
+                </div>
+
+                <div class="credentials-grid">
+                    <!-- Universitas Dian Nuswantoro -->
+                    <div class="credential-card reveal">
+                        <div class="credential-logo-wrap">
+                            <img src="logo_udinus.png" alt="Logo Universitas Dian Nuswantoro" width="56" height="56" loading="lazy">
+                        </div>
+                        <div class="credential-info">
+                            <h4>UDINUS</h4>
+                            <p class="credential-role"><span class="lang-id">S1 Sistem Informasi (Semester 7)</span><span class="lang-en">B.S. Information Systems (7th Sem)</span></p>
+                            <p class="credential-meta font-mono">2022 - Sekarang · Semarang</p>
+                        </div>
+                    </div>
+
+                    <!-- PT Telkom Indonesia -->
+                    <div class="credential-card reveal delay-1">
+                        <div class="credential-logo-wrap">
+                            <img src="logo_telkom.png" alt="Logo PT Telkom Indonesia" class="logo-light" width="56" height="56" loading="lazy">
+                            <img src="logo_telkom_dark.png" alt="Logo PT Telkom Indonesia" class="logo-dark" width="56" height="56" loading="lazy">
+                        </div>
+                        <div class="credential-info">
+                            <h4>PT Telkom Indonesia</h4>
+                            <p class="credential-role"><span class="lang-id">Magang Shared Service &amp; GS</span><span class="lang-en">Shared Service &amp; GS Intern</span></p>
+                            <p class="credential-meta font-mono">Feb 2026 - May 2026 · Semarang</p>
+                        </div>
+                    </div>
+
+                    <!-- Universitas Gadjah Mada -->
+                    <div class="credential-card reveal delay-2">
+                        <div class="credential-logo-wrap">
+                            <img src="logo_ugm.png" alt="Logo Universitas Gadjah Mada" width="56" height="56" loading="lazy">
+                        </div>
+                        <div class="credential-info">
+                            <h4>Universitas Gadjah Mada</h4>
+                            <p class="credential-role"><span class="lang-id">Pertukaran Mahasiswa - Ilmu Komputer</span><span class="lang-en">Student Exchange - Computer Science</span></p>
+                            <p class="credential-meta font-mono">Aug 2025 - Dec 2025 · Yogyakarta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EXPERIENCE MATRIX & PROJECT ENGINEERING -->
+        <section class="section-bento" id="experience">
+            <div class="bento-container">
+                <div class="bento-header reveal">
+                    <p class="section-label font-mono"><span class="lang-id">&lt;PORTFOLIO_EXPERIENCE/&gt;</span><span class="lang-en">&lt;PORTFOLIO_EXPERIENCE/&gt;</span></p>
+                    <h2 class="section-title"><span class="lang-id">Rekam Jejak &amp; <span class="accent-text">Pengalaman</span></span><span class="lang-en">Track Record &amp; <span class="accent-text">Experience</span></span></h2>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- BENTO TILE 1: PT TELKOM INDONESIA (SPAN 6) -->
+                    <article class="bento-card bento-telkom reveal">
+                        <div class="bento-card-header">
+                            <div class="bento-badge-group">
+                                <div class="bento-brand-logo">
+                                    <img src="logo_telkom.png" alt="Telkom Logo" class="logo-light" width="36" height="36" loading="lazy">
+                                    <img src="logo_telkom_dark.png" alt="Telkom Logo" class="logo-dark" width="36" height="36" loading="lazy">
+                                </div>
+                                <div>
+                                    <h3>PT Telkom Indonesia</h3>
+                                    <p class="bento-subtitle"><span class="lang-id">Magang Shared Service &amp; General Support</span><span class="lang-en">Shared Service &amp; General Support Intern</span></p>
+                                </div>
+                            </div>
+                            <span class="bento-date font-mono">2026</span>
+                        </div>
+
+                        <p class="bento-desc">
+                            <span class="lang-id">Mengidentifikasi kebutuhan alur kerja divisi, merancang diagram proses bisnis (UML &amp; BPMN), membangun sistem dashboard manajemen magang berbasis web, serta menyusun dokumentasi operasional untuk persiapan audit SMK3.</span>
+                            <span class="lang-en">Identified division workflow requirements, mapped business process diagrams (UML &amp; BPMN), engineered a web-based internship management dashboard, and structured operational documentation for SMK3 audit compliance.</span>
+                        </p>
+
+                        <!-- Project Schematic Highlight -->
+                        <div class="schematic-box">
+                            <div class="schematic-title font-mono"><i class="fas fa-server" aria-hidden="true"></i> <span class="lang-id">PROYEK TERKAIT: TELKOM INTERNSHIP DASHBOARD</span><span class="lang-en">FEATURED PROJECT: TELKOM INTERNSHIP DASHBOARD</span></div>
+                            <p><span class="lang-id">Platform internal untuk otomatisasi pencatatan absensi, penugasan proyek mentor, dan monitoring performa magang berkala.</span><span class="lang-en">Internal web platform for automated attendance tracking, mentor task assignments, and routine intern performance evaluation.</span></p>
+                        </div>
+
+                        <div class="bento-carousel exp-carousel" id="carousel-telkom" aria-label="Dokumentasi Magang PT Telkom Indonesia">
+                            <div class="carousel-track">
+                                <img src="img_telkom_landing.png" alt="Landing Page Proyek Magang PT Telkom Indonesia" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_telkom_login.png" alt="Portal Login Proyek Magang PT Telkom Indonesia" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_telkom_dashboard.jpg" alt="Telkom Internship Dashboard di Laptop" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_telkom_meeting.jpg" alt="Rapat Diskusi Proyek Magang PT Telkom" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_telkom.jpg" alt="Dokumentasi Magang PT Telkom Indonesia" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                            </div>
+                            <button class="carousel-btn prev" type="button" aria-label="Slide sebelumnya"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="carousel-btn next" type="button" aria-label="Slide berikutnya"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                            <div class="carousel-dots"></div>
+                        </div>
+
+                        <div class="bento-footer">
+                            <div class="project-tags">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">UML Architecture</span>
+                                <span class="tag">BPMN Workflow</span>
+                            </div>
+                            <a href="https://github.com/figliotniel/telkom-internship" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm font-mono" aria-label="Lihat source code Telkom Internship di GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i> Code
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- BENTO TILE 2: UNIVERSITAS GADJAH MADA (SPAN 6) -->
+                    <article class="bento-card bento-ugm reveal delay-1">
+                        <div class="bento-card-header">
+                            <div class="bento-badge-group">
+                                <div class="bento-brand-logo">
+                                    <img src="logo_ugm.png" alt="UGM Logo" width="36" height="36" loading="lazy">
+                                </div>
+                                <div>
+                                    <h3>Universitas Gadjah Mada</h3>
+                                    <p class="bento-subtitle"><span class="lang-id">Pertukaran Mahasiswa - Ilmu Komputer</span><span class="lang-en">Student Exchange - Computer Science</span></p>
+                                </div>
+                            </div>
+                            <span class="bento-date font-mono">2025</span>
+                        </div>
+
+                        <p class="bento-desc">
+                            <span class="lang-id">Menyelesaikan kurikulum intensif rekayasa perangkat lunak dan komputasi lanjut di Departemen Ilmu Komputer UGM. Memperdalam pemahaman perancangan pengujian sistem, arsitektur kecerdasan buatan, serta teknologi desentralisasi.</span>
+                            <span class="lang-en">Completed intensive coursework in software engineering and advanced computing at UGM Computer Science Department. Deepened expertise in SQA methodologies, AI model workflows, and decentralized architecture.</span>
+                        </p>
+
+                        <!-- Carousel for UGM Documentation -->
+                        <div class="bento-carousel exp-carousel" id="carousel-ugm" aria-label="Dokumentasi UGM">
+                            <div class="carousel-track">
+                                <img src="img_ugm_cs.jpg" alt="Figlio Otniel di Departemen Ilmu Komputer dan Elektronika UGM" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_ugm1.jpg" alt="Dokumentasi Perkuliahan UGM 1" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_ugm2.jpg" alt="Dokumentasi Perkuliahan UGM 2" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_ugm3.jpg" alt="Dokumentasi Perkuliahan UGM 3" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                            </div>
+                            <button class="carousel-btn prev" type="button" aria-label="Slide sebelumnya"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="carousel-btn next" type="button" aria-label="Slide berikutnya"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                            <div class="carousel-dots"></div>
+                        </div>
+
+                        <div class="bento-footer">
+                            <div class="project-tags">
+                                <span class="tag">Software Engineering Project</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Artificial Intelligence</span>
+                                <span class="tag">Blockchain</span>
+                                <span class="tag">IoT</span>
+                                <span class="tag">SQA</span>
                             </div>
                         </div>
-                        <h4 class="mt-4">Kopi Tuman Wirogomo</h4>
-                        <div class="project-tags mt-2 mb-3"><span class="tag">Astro</span><span class="tag">Tailwind CSS</span><span class="tag">Landing Page</span></div>
-                        <p class="text-sm text-secondary"><span class="lang-id">Landing page untuk komunitas pembudidaya benih kopi Robusta unggulan dari Desa Wirogomo, Semarang. Desain modern dengan animasi halus.</span><span class="lang-en">Landing page for a community of premium Robusta coffee cultivators from Wirogomo Village. Features modern design and smooth animations.</span></p>
-                    </div>
+                    </article>
 
-                    <!-- Omah Terasi -->
-                    <div class="exp-project-card reveal delay-1">
-                        <div class="project-preview">
-                            <img src="https://image.thum.io/get/width/600/crop/600/https://omah-terasi.vercel.app/" alt="Omah Terasi Preview" class="preview-img" onerror="this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80'">
-                            <div class="preview-overlay">
-                                <a href="https://omah-terasi.vercel.app/" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    <!-- BENTO TILE 3: SITANAS (SPAN 6) -->
+                    <article class="bento-card bento-sitanas reveal">
+                        <div class="bento-card-header">
+                            <div>
+                                <span class="tag font-mono mb-2" style="display: inline-block;">FLAGSHIP PROJECT</span>
+                                <h3>SITANAS</h3>
+                                <p class="bento-subtitle"><span class="lang-id">Sistem Informasi Tanah Aset Kas Desa</span><span class="lang-en">Village Treasury Land Asset Information System</span></p>
+                            </div>
+                            <span class="bento-date font-mono">Web App</span>
+                        </div>
+
+                        <p class="bento-desc">
+                            <span class="lang-id">Aplikasi web skala instansi desa untuk mendigitalisasi pencatatan inventaris tanah kas desa. Dilengkapi standarisasi NUP, kodefikasi barang, validasi sertifikat legalitas, dan multi-level approval berjenjang.</span>
+                            <span class="lang-en">Enterprise-grade village web application to digitize treasury land assets. Features NUP standardization, item codification, certificate legality validation, and multi-tier role approval workflows.</span>
+                        </p>
+
+                        <!-- Architecture Highlights -->
+                        <div class="schematic-box">
+                            <div class="schematic-title font-mono"><i class="fas fa-shield-alt" aria-hidden="true"></i> KEY ARCHITECTURE</div>
+                            <p class="font-mono text-sm">
+                                [✓] Role-Based Access Control (RBAC)<br>
+                                [✓] Dual-Key Certificate Verification<br>
+                                [✓] Relational Asset-to-Citizen Schema
+                            </p>
+                        </div>
+
+                        <div class="bento-carousel exp-carousel" id="carousel-sitanas" aria-label="Dokumentasi Sistem Informasi SITANAS">
+                            <div class="carousel-track">
+                                <img src="img_sitanas_login.png" alt="SITANAS - Halaman Login Portal Tanah Kas Desa" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                                <img src="img_sitanas.png" alt="SITANAS - Dashboard Manajemen Tanah Aset Kas Desa" class="carousel-img" width="600" height="340" loading="lazy" decoding="async">
+                            </div>
+                            <button class="carousel-btn prev" type="button" aria-label="Slide sebelumnya"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="carousel-btn next" type="button" aria-label="Slide berikutnya"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                            <div class="carousel-dots"></div>
+                        </div>
+
+                        <div class="bento-footer">
+                            <div class="project-tags">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Blade</span>
+                                <span class="tag">RPPL</span>
+                            </div>
+                            <a href="https://github.com/figliotniel/SITANAS" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm font-mono" aria-label="Lihat source code SITANAS di GitHub">
+                                <i class="fab fa-github" aria-hidden="true"></i> View Repo
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- BENTO TILE 4: KOPI TUMAN (SPAN 3) -->
+                    <article class="bento-card bento-kopituman reveal delay-1">
+                        <div class="bento-card-header">
+                            <div>
+                                <h3>Kopi Tuman</h3>
+                                <p class="bento-subtitle">Client Landing Page</p>
+                            </div>
+                            <span class="bento-date font-mono">Live</span>
+                        </div>
+
+                        <div class="bento-preview-wrap">
+                            <img src="img_kopituman.jpg" alt="Kopi Tuman Preview" width="360" height="200" loading="lazy" decoding="async">
+                            <div class="bento-preview-overlay">
+                                <a href="https://kopi-tuman.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" aria-label="Buka Live Demo Kopi Tuman">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                                </a>
                             </div>
                         </div>
-                        <h4 class="mt-4">Omah Terasi</h4>
-                        <div class="project-tags mt-2 mb-3"><span class="tag">HTML</span><span class="tag">Tailwind CSS</span><span class="tag">GSAP</span></div>
-                        <p class="text-sm text-secondary"><span class="lang-id">Landing page produk Terasi Udang Premium dari nelayan lokal Pesisir Pidodo Kulon, Kendal. Dilengkapi dengan animasi scroll interaktif menggunakan GSAP.</span><span class="lang-en">Landing page for Premium Shrimp Paste product from local fishermen in Pidodo Kulon Coast. Equipped with interactive scroll animations using GSAP.</span></p>
-                    </div>
 
+                        <p class="bento-desc text-sm">
+                            <span class="lang-id">Landing page modern untuk komunitas pembudidaya benih kopi Robusta unggulan Desa Wirogomo, Semarang.</span>
+                            <span class="lang-en">Modern landing page for the premium Robusta coffee cultivation community in Wirogomo Village, Semarang.</span>
+                        </p>
+
+                        <div class="bento-footer">
+                            <div class="project-tags">
+                                <span class="tag">Astro</span>
+                                <span class="tag">Tailwind</span>
+                            </div>
+                            <a href="https://kopi-tuman.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm font-mono" aria-label="Buka website Kopi Tuman">
+                                Demo &nearr;
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- BENTO TILE 5: OMAH TERASI (SPAN 3) -->
+                    <article class="bento-card bento-omahterasi reveal delay-2">
+                        <div class="bento-card-header">
+                            <div>
+                                <h3>Omah Terasi</h3>
+                                <p class="bento-subtitle">Interactive Product Site</p>
+                            </div>
+                            <span class="bento-date font-mono">Live</span>
+                        </div>
+
+                        <div class="bento-preview-wrap">
+                            <img src="img_omahterasi.png" alt="Tangkapan Layar Website Omah Terasi Pesisir Kendal" width="360" height="200" loading="lazy" decoding="async">
+                            <div class="bento-preview-overlay">
+                                <a href="https://omah-terasi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" aria-label="Buka Live Demo Omah Terasi">
+                                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+
+                        <p class="bento-desc text-sm">
+                            <span class="lang-id">Website etalase produk UMKM terasi udang pesisir Kendal dengan animasi scroll interaktif GSAP.</span>
+                            <span class="lang-en">Interactive showcase website for coastal artisan shrimp paste with smooth GSAP scroll storytelling.</span>
+                        </p>
+
+                        <div class="bento-footer">
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">GSAP</span>
+                                <span class="tag">Tailwind</span>
+                            </div>
+                            <a href="https://omah-terasi.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm font-mono" aria-label="Buka website Omah Terasi">
+                                Demo &nearr;
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
+
+        <!-- 4. TECH STACK & SYSTEMS LAB -->
+        <section class="section-skills" id="skills">
+            <div class="bento-container">
+                <div class="bento-header reveal">
+                    <p class="section-label font-mono"><span class="lang-id">&lt;SYSTEM_CAPABILITIES/&gt;</span><span class="lang-en">&lt;SYSTEM_CAPABILITIES/&gt;</span></p>
+                    <h2 class="section-title"><span class="lang-id">Keahlian &amp; <span class="accent-text">Teknologi</span></span><span class="lang-en">Skills &amp; <span class="accent-text">Tech Stack</span></span></h2>
+                    <p class="section-desc">
+                        <span class="lang-id">Kumpulan teknologi, metodologi perancangan sistem, dan tools rekayasa yang saya gunakan secara aktif.</span>
+                        <span class="lang-en">Technologies, system design methodologies, and engineering tools I actively work with.</span>
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- CARD 1: BACKEND & DATABASE -->
+                    <article class="skill-card reveal">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box">
+                                <i class="fas fa-server" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Backend &amp; Database</h3>
+                                <p class="skill-subtitle"><span class="lang-id">Arsitektur Server &amp; Relasional</span><span class="lang-en">Server Architecture &amp; Relational</span></p>
+                            </div>
+                        </div>
+
+                        <div class="skill-pill-list">
+                            <div class="tech-pill">
+                                <i class="fab fa-laravel" style="color: #f43f5e;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Laravel</span>
+                                    <span class="pill-tag">Framework</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fab fa-php" style="color: #818cf8;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">PHP</span>
+                                    <span class="pill-tag">Core Language</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-database" style="color: #06b6d4;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">MySQL</span>
+                                    <span class="pill-tag">Database</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-network-wired" style="color: #10b981;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">RESTful API</span>
+                                    <span class="pill-tag">Architecture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 2: SYSTEMS & ANALYSIS -->
+                    <article class="skill-card reveal delay-1">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box">
+                                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Systems &amp; Analysis</h3>
+                                <p class="skill-subtitle"><span class="lang-id">Pemodelan Alur &amp; Analisis Sistem</span><span class="lang-en">Workflow &amp; System Modeling</span></p>
+                            </div>
+                        </div>
+
+                        <div class="skill-pill-list">
+                            <div class="tech-pill">
+                                <i class="fas fa-sitemap" style="color: #06b6d4;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">BPMN 2.0</span>
+                                    <span class="pill-tag">Process Flow</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-cubes" style="color: #facc15;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">UML Modeling</span>
+                                    <span class="pill-tag">Use Case / Seq</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-table" style="color: #10b981;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">ERD &amp; DFD</span>
+                                    <span class="pill-tag">Schema Design</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-file-alt" style="color: #a855f7;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">RPPL Specs</span>
+                                    <span class="pill-tag">Requirements</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 3: FRONTEND UI & WEB CRAFT -->
+                    <article class="skill-card reveal delay-1">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box">
+                                <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Frontend UI &amp; Web</h3>
+                                <p class="skill-subtitle"><span class="lang-id">Antarmuka Interaktif &amp; Responsif</span><span class="lang-en">Interactive &amp; Responsive Web</span></p>
+                            </div>
+                        </div>
+
+                        <div class="skill-pill-list">
+                            <div class="tech-pill">
+                                <i class="fab fa-react" style="color: #06b6d4;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">React</span>
+                                    <span class="pill-tag">Component UI</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fab fa-css3-alt" style="color: #38bdf8;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Tailwind CSS</span>
+                                    <span class="pill-tag">Styling</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fab fa-js" style="color: #facc15;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">JavaScript</span>
+                                    <span class="pill-tag">ES6+</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-code" style="color: #10b981;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Blade &amp; HTML5</span>
+                                    <span class="pill-tag">Templating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CARD 4: TOOLS & DEV WORKFLOW -->
+                    <article class="skill-card reveal delay-2">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-box">
+                                <i class="fas fa-terminal" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3>Tools &amp; Workflow</h3>
+                                <p class="skill-subtitle"><span class="lang-id">Pipeline, Testing &amp; Deployment</span><span class="lang-en">Pipeline, Testing &amp; Deployment</span></p>
+                            </div>
+                        </div>
+
+                        <div class="skill-pill-list">
+                            <div class="tech-pill">
+                                <i class="fab fa-git-alt" style="color: #f97316;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Git &amp; GitHub</span>
+                                    <span class="pill-tag">Version Control</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-paper-plane" style="color: #f97316;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Postman</span>
+                                    <span class="pill-tag">API Testing</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-terminal" style="color: #10b981;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Terminal CLI</span>
+                                    <span class="pill-tag">Bash / PowerShell</span>
+                                </div>
+                            </div>
+                            <div class="tech-pill">
+                                <i class="fas fa-bolt" style="color: #a855f7;" aria-hidden="true"></i>
+                                <div class="pill-info">
+                                    <span class="pill-name">Vite &amp; Vercel</span>
+                                    <span class="pill-tag">Build &amp; Deploy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. COMMAND CENTER CONNECT & CONTACT HUB -->
+        <section class="section-connect" id="contact">
+            <div class="bento-container">
+                <div class="connect-hub-card reveal">
+                    <p class="section-label font-mono"><span class="lang-id">// INISIASI KOMUNIKASI</span><span class="lang-en">// INITIATE COMMUNICATION</span></p>
+                    <h2 class="connect-hub-title"><span class="lang-id">Mari Kolaborasi &amp; <span class="accent-text">Bangun Solusi</span></span><span class="lang-en">Let's Connect &amp; <span class="accent-text">Build Together</span></span></h2>
+                    
+                    <p class="connect-hub-desc">
+                        <span class="lang-id">Terbuka untuk peluang rekayasa web, perancangan arsitektur sistem, magang, maupun proyek kolaboratif freelance.</span>
+                        <span class="lang-en">Open for software engineering opportunities, systems architecture design, internships, and creative freelance collaborations.</span>
+                    </p>
+
+                    <!-- Quick Copy Email Bar -->
+                    <div class="copy-email-bar">
+                        <span class="copy-email-text" id="emailToCopy">otnielfiglio@gmail.com</span>
+                        <button class="btn-copy font-mono" id="btnCopyEmail" aria-label="Salin email ke clipboard">
+                            <i class="fas fa-copy" aria-hidden="true"></i>
+                            <span><span class="lang-id">Salin Email</span><span class="lang-en">Copy Email</span></span>
+                        </button>
+                    </div>
+
+                    <!-- Social Radar Grid -->
+                    <div class="social-radar-grid">
+                        <a href="https://www.linkedin.com/in/figlio-otniel-06133a334/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Buka profil LinkedIn Figlio Otniel">
+                            <div class="social-icon s-linkedin"><i class="fab fa-linkedin-in" aria-hidden="true"></i></div>
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a href="https://github.com/figliotniel" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Buka profil GitHub Figlio Otniel">
+                            <div class="social-icon s-github"><i class="fab fa-github" aria-hidden="true"></i></div>
+                            <span>GitHub</span>
+                        </a>
+
+                        <a href="https://www.instagram.com/figliotniel/" target="_blank" rel="noopener noreferrer" class="social-card" aria-label="Buka profil Instagram Figlio Otniel">
+                            <div class="social-icon s-instagram"><i class="fab fa-instagram" aria-hidden="true"></i></div>
+                            <span>Instagram</span>
+                        </a>
+
+                        <a href="CV.pdf" download="CV_Figlio_Otniel.pdf" class="social-card" aria-label="Unduh CV Figlio Otniel PDF">
+                            <div class="social-icon s-cv"><i class="fas fa-download" aria-hidden="true"></i></div>
+                            <span><span class="lang-id">Unduh CV</span><span class="lang-en">Download CV</span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FLOATING TOAST NOTIFICATION -->
+    <div class="toast-container" id="toastContainer" aria-live="polite">
+        <div class="toast" id="copyToast">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span id="toastMsg">Email tersalin ke clipboard! ✨</span>
         </div>
-    </section>
+    </div>
 
-    <section class="section" id="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <p class="section-label"><span class="lang-id">Kemampuan</span><span class="lang-en">Capabilities</span></p>
-                <h2 class="section-title">Tech <span class="accent-text">Stack</span></h2>
-            </div>
-            <div class="skills-container reveal">
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend & Database</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Laravel</span>
-                        <span class="skill-badge">PHP</span>
-                        <span class="skill-badge">MySQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">React</span>
-                        <span class="skill-badge">Tailwind CSS</span>
-                        <span class="skill-badge">HTML5</span>
-                        <span class="skill-badge">CSS3</span>
-                        <span class="skill-badge">Blade</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-project-diagram"></i> Analysis & Design</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">UML</span>
-                        <span class="skill-badge">BPMN</span>
-                        <span class="skill-badge">ERD</span>
-                        <span class="skill-badge">DFD</span>
-                        <span class="skill-badge">Flowchart</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Workflow</h3>
-                    <div class="skill-badges">
-                        <span class="skill-badge">Git</span>
-                        <span class="skill-badge">GitHub</span>
-                        <span class="skill-badge">Figma</span>
-                        <span class="skill-badge">Postman</span>
-                        <span class="skill-badge">Composer</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt" id="contact">
-        <div class="container">
-            <div class="section-header reveal">
-                <p class="section-label"><span class="lang-id">Mari Berdiskusi</span><span class="lang-en">Let's Talk</span></p>
-                <h2 class="section-title"><span class="lang-id">Hubungi <span class="accent-text">Saya</span></span><span class="lang-en">Contact <span class="accent-text">Me</span></span></h2>
-            </div>
-            
-            <div class="contact-cards-row">
-                <a href="mailto:otnielfiglio@gmail.com" class="contact-card-small reveal">
-                    <div class="contact-icon brand-email"><i class="fas fa-envelope"></i></div>
-                    <div class="contact-info">
-                        <h3>Email</h3>
-                        <p>otnielfiglio@gmail.com</p>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/figlio-otniel-06133a334/" target="_blank" class="contact-card-small reveal delay-1">
-                    <div class="contact-icon brand-linkedin"><i class="fab fa-linkedin-in"></i></div>
-                    <div class="contact-info">
-                        <h3>LinkedIn</h3>
-                        <p>Figlio Otniel</p>
-                    </div>
-                </a>
-                <a href="https://www.instagram.com/figliotniel/" target="_blank" class="contact-card-small reveal delay-2">
-                    <div class="contact-icon brand-instagram"><i class="fab fa-instagram"></i></div>
-                    <div class="contact-info">
-                        <h3>Instagram</h3>
-                        <p>@figliotniel</p>
-                    </div>
-                </a>
-                <a href="https://github.com/figliotniel" target="_blank" class="contact-card-small reveal delay-3">
-                    <div class="contact-icon brand-github"><i class="fab fa-github"></i></div>
-                    <div class="contact-info">
-                        <h3>GitHub</h3>
-                        <p>figliotniel</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo"><span class="logo-bracket">&lt;</span>Fig<span class="logo-bracket">/&gt;</span></div>
-                <p class="footer-text"><span class="lang-id">Dibuat dengan </span><span class="lang-en">Made with </span><i class="fas fa-heart heartbeat"></i><span class="lang-id"> oleh Figlio Otniel</span><span class="lang-en"> by Figlio Otniel</span></p>
-                <div class="footer-socials">
-                    <a href="https://github.com/figliotniel" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/figlio-otniel-06133a334/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/figliotniel/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
+        <div class="footer-content">
+            <div class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Fig<span class="logo-bracket">/&gt;</span>
+            </div>
+            <p class="footer-text">
+                <span class="lang-id">Dirancang &amp; Dikembangkan oleh Figlio Otniel © 2026</span>
+                <span class="lang-en">Designed &amp; Developed by Figlio Otniel © 2026</span>
+            </p>
+            <div class="footer-socials">
+                <a href="https://github.com/figliotniel" target="_blank" rel="noopener noreferrer" aria-label="GitHub Figlio Otniel"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/figlio-otniel-06133a334/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Figlio Otniel"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/figliotniel/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Figlio Otniel"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             </div>
         </div>
     </footer>
